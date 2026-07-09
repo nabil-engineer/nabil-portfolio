@@ -362,3 +362,49 @@ footer p{
 
 
 }
+.project-card img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    border:2px solid #e5e7eb;
+
+    transition:0.3s;
+
+    cursor:pointer;
+
+}
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+
+}
+.tech-stack{
+
+    margin:20px 0;
+
+}
+.tech-stack span{
+
+    display:inline-block;
+
+    background:#1d4ed8;
+
+    color:white;
+
+    padding:8px 15px;
+
+    margin:5px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
