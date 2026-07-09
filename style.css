@@ -501,8 +501,8 @@ footer p{
 
     min-height: 80vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 40px 20px;
 
@@ -552,9 +552,9 @@ footer p{
 
 .hero-buttons a {
 
-    text-decoration: none;
     padding: 12px 25px;
     border-radius: 8px;
+    text-decoration: none;
     background: #111;
     color: white;
     transition: 0.3s;
