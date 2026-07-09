@@ -408,3 +408,33 @@ footer p{
     font-weight:bold;
 
 }
+.project-features {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.project-features li {
+    margin-bottom: 8px;
+}
+
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.project-links a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    transition: 0.3s;
+}
+
+
+.project-links a:hover {
+    transform: translateY(-3px);
+}
