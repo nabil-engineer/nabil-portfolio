@@ -145,24 +145,38 @@ p{
 .navbar{
 
     position:fixed;
+
     top:0;
+
     left:0;
 
     width:100%;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:18px 8%;
 
-    background:rgba(17,24,39,.95);
+    background:rgba(15,23,42,.75);
 
     backdrop-filter:blur(12px);
 
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:all .35s ease;
+
     z-index:1000;
 
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.navbar.scrolled{
+
+    background:#0f172a;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 
 }
 
@@ -225,6 +239,18 @@ p{
 
 }
 
+.nav-links a.active{
+
+    color:#60a5fa;
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
 .nav-links a:hover::after{
 
     width:100%;
@@ -271,6 +297,12 @@ p{
 
 .hero-container{
 
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
     display:flex;
 
     justify-content:space-between;
@@ -303,7 +335,43 @@ p{
 
     border:6px solid rgba(255,255,255,.25);
 
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+    transition:var(--transition);
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.45);
 
 }
 
@@ -333,21 +401,23 @@ p{
 
 .hero-content p{
 
-    color:#d1d5db;
+    max-width:100%;
 
-    margin-bottom:35px;
-
-    max-width:550px;
+    margin:0 auto 35px;
 
 }
 
 .hero-buttons{
 
+    width:100%;
+
     display:flex;
 
-    flex-wrap:wrap;
+    flex-direction:column;
 
-    gap:20px;
+    align-items:center;
+
+    gap:18px;
 
 }
 
@@ -359,19 +429,31 @@ p{
 
     color:white;
 
-    padding:15px 30px;
+    padding:15px 32px;
 
-    border-radius:8px;
+    border-radius:10px;
 
     font-weight:bold;
 
     transition:var(--transition);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.hero-content{
+
+    width:100%;
 
 }
 
 .hero-buttons a:hover{
 
     background:var(--primary-hover);
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.35);
 
 }
 
@@ -488,7 +570,9 @@ p{
 
 .skill-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.15);
 
 }
 
@@ -526,6 +610,16 @@ p{
     padding:40px;
 
     box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 55px rgba(37,99,235,.18);
 
 }
 
@@ -656,7 +750,9 @@ p{
 
 .education-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.15);
 
 }
 
@@ -711,7 +807,9 @@ p{
 
 .cert-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.15);
 
 }
 
@@ -890,9 +988,17 @@ footer p{
 
     .hero-container{
 
-        flex-direction:column;
+    width:100%;
 
-        text-align:center;
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:40px;
 
     }
 
