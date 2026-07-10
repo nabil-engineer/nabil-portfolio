@@ -318,48 +318,8 @@ footer p{
     margin:0;
 
 }
-@media (max-width:768px){
-    
-    .hero h1{
-
-    font-size:40px;
-
-}
-    .hero p{
-
-    font-size:18px;
-
-}
-    .skills-container{
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-    .skill-card{
-
-    width:220px;
-
-}
-    .project-card{
-
-    padding:25px;
-
-}
-    .education-card{
-
-    padding:20px;
-
-}
-    nav{
-
-    flex-direction:column;
-
-}
 
 
-}
 .project-card img{
 
     width:100%;
@@ -641,7 +601,9 @@ header.hero {
 }
 .hero {
 
-    min-height: 100vh;
+    min-height:auto;
+
+    padding:120px 20px 60px;
 
     display: flex;
 
@@ -721,23 +683,30 @@ header.hero {
 
 }
 
+@media (max-width:768px){
+
 .hero-container{
 
-    display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    gap:60px;
+    text-align:center;
+    gap:30px;
 
-    flex-wrap:wrap;
+}
+
+.hero-content{
+
+    max-width:100%;
+}
 
 }
 
 
 .hero-image img{
 
-    width:320px;
+    width:180px;
 
-    height:320px;
+    height:180px;
 
     object-fit:cover;
 
@@ -759,7 +728,7 @@ header.hero {
 
 .hero-content h1{
 
-    font-size:60px;
+    font-size:34px;
 
 }
 
@@ -773,7 +742,7 @@ header.hero {
 
 .hero-content p{
 
-    font-size:20px;
+    font-size:16px;
 
     line-height:1.6;
 
@@ -793,9 +762,9 @@ header.hero {
 
 .hero-image img{
 
-    width:220px;
+    width:180px;
 
-    height:220px;
+    height:180px;
 
 }
 
@@ -843,11 +812,7 @@ header.hero {
 
 .nav-links{
 
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:15px;
+    display:none;
 
 }
 
@@ -922,6 +887,108 @@ header.hero {
 
         text-decoration:none;
 
+    }
+
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        position:relative;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#111;
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+        padding:20px 0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:50px 20px;
+    }
+
+    .hero-container{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .hero-image img{
+        width:220px;
+        height:220px;
+    }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-content h2{
+        font-size:24px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-buttons a{
+        width:220px;
+    }
+
+    .skills-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .skill-card{
+        width:100%;
+        max-width:320px;
+    }
+
+    .project-card,
+    .education-card{
+        padding:20px;
     }
 
 }
