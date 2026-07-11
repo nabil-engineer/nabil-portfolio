@@ -113,13 +113,45 @@ h1{
 
 h2{
 
-    font-size:42px;
+    position:relative;
 
-    text-align:center;
+    display:inline-block;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:42px;
 
     color:var(--primary);
 
-    margin-bottom:60px;
+    margin-bottom:70px;
+
+}
+
+h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-12px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+
+    height:4px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
 
 }
 
@@ -342,6 +374,10 @@ p{
 
     animation:floatImage 5s ease-in-out infinite;
 
+    opacity:0;
+
+    animation:fadeImage 1s ease forwards;
+
 }
 
 @keyframes floatImage{
@@ -423,19 +459,23 @@ p{
 
 .hero-buttons a{
 
-    display:inline-block;
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:15px 30px;
 
     background:var(--primary);
 
     color:white;
 
-    padding:15px 32px;
-
-    border-radius:10px;
+    border-radius:8px;
 
     font-weight:bold;
 
-    transition:var(--transition);
+    transition:all .35s ease;
 
     box-shadow:0 10px 25px rgba(37,99,235,.25);
 
@@ -453,9 +493,10 @@ p{
 
     transform:translateY(-5px);
 
-    box-shadow:0 18px 35px rgba(37,99,235,.35);
+    box-shadow:0 18px 40px rgba(37,99,235,.35);
 
 }
+
 
 /* =======================================================
    CARDS
@@ -554,6 +595,10 @@ p{
 
 .skill-card{
 
+    position:relative;
+
+    overflow:hidden;
+
     background:white;
 
     border-radius:18px;
@@ -564,15 +609,51 @@ p{
 
     box-shadow:var(--shadow);
 
-    transition:var(--transition);
+    transition:all .35s ease;
+
+}
+
+.skill-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--primary);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
 
 }
 
 .skill-card:hover{
 
-    transform:translateY(-12px);
+    transform:
 
-    box-shadow:0 20px 45px rgba(37,99,235,.15);
+        translateY(-12px)
+
+        scale(1.02);
+
+    box-shadow:
+
+        0 20px 45px rgba(37,99,235,.18);
+
+}
+
+.skill-card:hover::before{
+
+    transform:scaleX(1);
 
 }
 
@@ -603,6 +684,10 @@ p{
 
 .project-card{
 
+    position:relative;
+
+    overflow:hidden;
+
     background:white;
 
     border-radius:20px;
@@ -611,15 +696,53 @@ p{
 
     box-shadow:var(--shadow);
 
-    transition:var(--transition);
+    transition:all .35s ease;
+
+}
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
 
 }
 
 .project-card:hover{
 
-    transform:translateY(-10px);
+    transform:
 
-    box-shadow:0 25px 55px rgba(37,99,235,.18);
+        translateY(-12px);
+
+    box-shadow:
+
+        0 22px 55px rgba(37,99,235,.20);
+
+}
+
+.project-card:hover::before{
+
+    transform:scaleX(1);
 
 }
 
@@ -630,6 +753,76 @@ p{
     border-radius:12px;
 
     margin-bottom:30px;
+
+    transition:transform .4s ease;
+
+    opacity:0;
+
+    animation:fadeImage 1.2s ease forwards;
+
+}
+
+.project-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+.project-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.65);
+
+    opacity:0;
+
+    transition:all .35s ease;
+
+}
+
+.project-overlay span{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    transform:translateY(20px);
+
+    transition:.35s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.03);
+
+}
+
+.project-card:hover .project-overlay{
+
+    opacity:1;
+
+}
+
+.project-card:hover .project-overlay span{
+
+    transform:translateY(0);
 
 }
 
@@ -701,6 +894,12 @@ p{
 
 .project-links a{
 
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     background:#111827;
 
     color:white;
@@ -711,13 +910,19 @@ p{
 
     font-weight:bold;
 
-    transition:var(--transition);
+    transition:all .35s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 
 }
 
 .project-links a:hover{
 
     background:var(--primary);
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.35);
 
 }
 
@@ -860,6 +1065,14 @@ p{
 
 .contact-links a{
 
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:180px;
+
     background:var(--primary);
 
     color:white;
@@ -868,13 +1081,80 @@ p{
 
     border-radius:8px;
 
-    transition:var(--transition);
+    transition:all .35s ease;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
 
 }
 
 .contact-links a:hover{
 
     background:var(--primary-hover);
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.35);
+
+}
+
+
+/* =======================================================
+   BACK TO TOP
+======================================================= */
+
+#backToTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:all .35s ease;
+
+    z-index:999;
+
+}
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+#backToTop:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-5px);
 
 }
 
@@ -927,6 +1207,29 @@ footer p{
 }
 
 
+/* =======================================================
+   IMAGE ANIMATIONS
+======================================================= */
+
+@keyframes fadeImage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
 
 
 /* =======================================================
