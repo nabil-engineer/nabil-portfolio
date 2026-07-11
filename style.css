@@ -179,6 +179,12 @@ h2::after{
 
 }
 
+.hero-content h2::after{
+
+    display:none;
+
+}
+
 h3{
 
     font-size:28px;
@@ -267,6 +273,35 @@ p{
     background:var(--primary);
 
     color:white;
+
+}
+
+
+/* =======================================================
+   SCROLL PROGRESS BAR
+======================================================= */
+
+#progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    z-index:9999;
+
+    transition:width .1s linear;
 
 }
 
@@ -396,6 +431,32 @@ p{
 
 }
 
+#theme-toggle{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    margin-left:auto;
+
+    margin-right:20px;
+
+    transition:.3s;
+
+}
+
+#theme-toggle:hover{
+
+    transform:rotate(20deg) scale(1.1);
+
+}
+
 .menu-toggle{
 
     display:none;
@@ -410,22 +471,6 @@ p{
 
 }
 
-
-/* =======================================================
-   ACTIVE NAVIGATION LINK
-======================================================= */
-
-.nav-links a.active{
-
-    color:#60a5fa;
-
-}
-
-.nav-links a.active::after{
-
-    width:100%;
-
-}
 
 
 /* =======================================================
@@ -477,6 +522,8 @@ p{
 
     justify-content:center;
 
+    animation:floatImage 4s ease-in-out infinite;
+
 }
 
 .hero-image img{
@@ -495,33 +542,11 @@ p{
 
     opacity:0;
 
-    animation:
-        floatImage 1s ease-in-out infinite,
-        fadeImage 5s ease forwards;
+    animation:fadeImage 1s ease forwards;
 
+    background:white;    
 }
 
-@keyframes floatImage{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
 
 .hero-image img:hover{
 
@@ -550,6 +575,16 @@ p{
 
 }
 
+#typing{
+
+    border-right:3px solid white;
+
+    padding-right:6px;
+
+    animation:blink .7s infinite;
+
+}
+
 
 .hero-content p{
 
@@ -557,7 +592,7 @@ p{
 
     max-width:100%;
 
-    margin:0 auto 35px;
+    margin:0 0 35px;
 
     font-size:20px;
 
@@ -571,11 +606,11 @@ p{
 
     display:flex;
 
-    flex-direction:column;
+    flex-wrap:wrap;
 
-    align-items:center;
+    justify-content:flex-start;
 
-    gap:18px;
+    gap:20px;
 
 }
 
@@ -601,7 +636,7 @@ p{
 
     box-shadow:0 10px 25px rgba(37,99,235,.25);
 
-    min-width:180px;
+    min-width:200px;
 
     text-align:center;
 
@@ -655,7 +690,10 @@ p{
     box-shadow:
         0 10px 35px rgba(0,0,0,.08);
 
-    transition:.35s;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 
 }
 
@@ -791,6 +829,8 @@ p{
 
     background:white;
 
+    border:1px solid rgba(226,232,240,.8);
+
     border-radius:18px;
 
     padding:40px;
@@ -879,6 +919,8 @@ p{
     overflow:hidden;
 
     background:white;
+
+    border:1px solid rgba(226,232,240,.8);
 
     border-radius:20px;
 
@@ -1172,6 +1214,8 @@ p{
 
     background:white;
 
+    border:1px solid rgba(226,232,240,.8);
+
     border-radius:18px;
 
     padding:40px;
@@ -1230,6 +1274,8 @@ p{
 .cert-card{
 
     background:white;
+
+    border:1px solid rgba(226,232,240,.8);
 
     border-radius:18px;
 
@@ -1418,6 +1464,8 @@ p{
 
     transform:translateY(-5px);
 
+    box-shadow:0 18px 40px rgba(37,99,235,.35);
+
 }
 
 
@@ -1469,29 +1517,6 @@ footer p{
 }
 
 
-/* =======================================================
-   IMAGE ANIMATIONS
-======================================================= */
-
-@keyframes fadeImage{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
 
 
 /* =======================================================
@@ -1594,6 +1619,14 @@ footer p{
         display:block;
 
     }
+
+    #theme-toggle{
+
+    margin-right:10px;
+
+    font-size:22px;
+
+}
 
     .nav-links{
 
@@ -1734,6 +1767,130 @@ footer p{
         align-items:center;
 
     }
+
+}
+
+
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+/* Floating Profile Image */
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Fade Animation */
+
+@keyframes fadeImage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Typing Cursor */
+
+@keyframes blink{
+
+    50%{
+
+        border-color:transparent;
+
+    }
+
+}
+
+
+
+/* =======================================================
+   DARK MODE
+======================================================= */
+
+body.dark{
+
+    --background:#0f172a;
+
+    --light:#111827;
+
+    --card:#1e293b;
+
+    --border:#334155;
+
+    --gray:#cbd5e1;
+
+    color:white;
+
+}
+
+body.dark section{
+
+    background:var(--background) !important;
+
+}
+
+body.dark .skill-card,
+body.dark .project-card,
+body.dark .education-card,
+body.dark .cert-card,
+body.dark .stat-card{
+
+    background:var(--card);
+
+    color:white;
+
+    border-color:#334155;
+
+}
+
+body.dark p{
+
+    color:#d1d5db;
+
+}
+
+body.dark footer{
+
+    background:#020617;
+
+}
+
+body.dark .navbar{
+
+    background:rgba(2,6,23,.9);
 
 }
 

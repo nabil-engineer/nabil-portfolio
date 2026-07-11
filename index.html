@@ -19,23 +19,30 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#0f172a">
+
     <meta property="og:title"
-      content="Nabil Elouizi | Software Developer">
+    content="Nabil Elouizi | Software Developer | AI Engineer | Aerospace Software">
 
     <meta property="og:description"
-      content="Portfolio of Nabil Elouizi - AI, Software Engineering and Aerospace Technology.">
+    content="Portfolio of Nabil Elouizi - AI, Software Engineering and Aerospace Technology.">
 
     <meta property="og:type"
-      content="website">
+    content="website">
 
     <meta property="og:image"
-      content="images/profile.png">
+    content="https://nabil-engineer.github.io/nabil-portfolio/images/profile.webp">
 
-    <title>Nabil Elouizi | Portfolio</title>
+    <meta property="og:url" content="https://nabil-engineer.github.io/nabil-portfolio/">
 
+    <meta property="og:site_name" content="Nabil Elouizi Portfolio">
+
+    <title>Nabil Elouizi | Software Developer | AI Engineer | Aerospace Software</title>
     <link rel="icon"
-      type="image/png"
-      href="images/profile.png">
+    type="image/png"
+    href="images/profile.webp">
+
+    <link rel="apple-touch-icon" href="images/profile.webp">  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -49,6 +56,8 @@
 
 <body>
 
+    <div id="progress-bar"></div>
+
 
 <!-- =======================================================
      NAVBAR
@@ -61,13 +70,19 @@
     </div>
 
     <button
+    id="theme-toggle"
+    aria-label="Toggle Dark Mode">
+    🌙
+    </button>
+
+    <button
     class="menu-toggle"
     aria-label="Open navigation menu">
         ☰
     </button>
 
     <ul class="nav-links">
-
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -84,14 +99,17 @@
      HERO
 ======================================================= -->
 
-<header class="hero">
+<header class="hero" id="home">
 
     <div class="hero-container">
 
         <div class="hero-image">
 
-            <img src="images/profile.png"
-                 alt="Nabil Elouizi">
+            <img
+                src="images/profile.webp"
+                alt="Nabil Elouizi"
+                loading="eager"
+                decoding="async">
 
         </div>
 
@@ -101,9 +119,9 @@
             <h1>Nabil Elouizi</h1>
 
             <h2>
-                Software Developer 
-                & 
-                AI Engineer
+                
+              <span id="typing"></span>
+
             </h2>
 
             <p>
@@ -313,6 +331,8 @@
                 <img
                     src="images/aeroflightsuite.png"
                     alt="AeroFlight Suite"
+                    loading="lazy"
+                    decoding="async"
                 >
 
                 <div class="project-overlay">
@@ -361,6 +381,7 @@
                 <a
                     href="https://github.com/nabil-engineer/AeroFlightSuite"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     View Source Code
                 </a>
@@ -524,19 +545,22 @@
 
         <div class="contact-links">
 
-            <a href="mailto:nabilelouizi123@gmail.com">
+            <a href="mailto:nabilelouizi123@gmail.com"
+                aria-label="Send Email">
                 📧 Email
             </a>
 
             <a href="https://github.com/nabil-engineer"
                target="_blank"
-               rel="noopener noreferrer">
+               rel="noopener noreferrer"
+               aria-label="GitHub Profile">
                 GitHub
             </a>
 
             <a href="https://www.linkedin.com/in/nabil-elouizi-026953420/"
                target="_blank"
-               rel="noopener noreferrer">
+               rel="noopener noreferrer"
+               aria-label="LinkedIn Profile">
                 LinkedIn
             </a>
 
@@ -552,10 +576,10 @@
      BACK TO TOP BUTTON
 ======================================================= -->
 
-<button id="backToTop">
-
-    ↑
-
+<button
+id="backToTop"
+aria-label="Back to top">
+↑
 </button>
 
 
@@ -569,7 +593,7 @@
 
         <p>
 
-            © 2026 Nabil Elouizi. All Rights Reserved.
+            © 2026 Nabil Elouizi • All Rights Reserved.
 
         </p>
 

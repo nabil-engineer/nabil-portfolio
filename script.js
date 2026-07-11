@@ -27,15 +27,21 @@ function revealSections(){
    MOBILE MENU
 ======================================================= */
 
+
 const menuToggle = document.querySelector(".menu-toggle");
 
 const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
 
-    navLinks.classList.toggle("active");
+if(menuToggle){
 
-});
+    menuToggle.addEventListener("click",()=>{
+
+        navLinks.classList.toggle("active");
+
+    });
+
+}
 
 const sections = document.querySelectorAll("section");
 
@@ -254,31 +260,181 @@ const lightbox = document.getElementById("lightbox");
 
 const closeLightbox = document.querySelector(".close-lightbox");
 
-projectImage.addEventListener("click", function () {
+if(projectImage){
 
-    lightbox.classList.add("active");
+    projectImage.addEventListener("click", function(){
 
-});
+        lightbox.classList.add("active");
+
+    });
+
+}
 
 const overlay = document.querySelector(".project-overlay");
 
-overlay.addEventListener("click", function () {
+if(overlay){
 
-    lightbox.classList.add("active");
+    overlay.addEventListener("click", function(){
 
-});
+        lightbox.classList.add("active");
 
-closeLightbox.addEventListener("click", () => {
+    });
 
-    lightbox.classList.remove("active");
+}
 
-});
+if(closeLightbox){
 
-lightbox.addEventListener("click", (e) => {
-
-    if(e.target === lightbox){
+    closeLightbox.addEventListener("click",()=>{
 
         lightbox.classList.remove("active");
+
+    });
+
+}
+
+if(lightbox){
+
+    lightbox.addEventListener("click",(e)=>{
+
+        if(e.target===lightbox){
+
+            lightbox.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+
+/* =======================================================
+   SCROLL PROGRESS BAR
+======================================================= */
+
+const progressBar = document.getElementById("progress-bar");
+
+window.addEventListener("scroll",()=>{
+
+    const scroll =
+        document.documentElement.scrollTop;
+
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress = (scroll / height) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+
+/* =======================================================
+   TYPING EFFECT
+======================================================= */
+
+const typing = document.getElementById("typing");
+
+const words = [
+
+    "Software Developer",
+
+    "AI Engineer",
+
+    "Python Developer",
+
+    "Aerospace Software Engineer"
+
+];
+
+let wordIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+function typeEffect(){
+
+    const current = words[wordIndex];
+
+    if(!deleting){
+
+        typing.textContent =
+        current.substring(0,charIndex++);
+
+        if(charIndex > current.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        typing.textContent =
+        current.substring(0,--charIndex);
+
+        if(charIndex===0){
+
+            deleting=false;
+
+            wordIndex++;
+
+            if(wordIndex===words.length){
+
+                wordIndex=0;
+
+            }
+
+        }
+
+    }
+
+    setTimeout(typeEffect,deleting?40:90);
+
+}
+
+typeEffect();
+
+
+/* =======================================================
+   DARK MODE
+======================================================= */
+
+const themeToggle = document.getElementById("theme-toggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme==="dark"){
+
+    document.body.classList.add("dark");
+
+    themeToggle.textContent="☀️";
+
+}
+
+themeToggle.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("theme","dark");
+
+        themeToggle.textContent="☀️";
+
+    }
+
+    else{
+
+        localStorage.setItem("theme","light");
+
+        themeToggle.textContent="🌙";
 
     }
 
