@@ -89,8 +89,6 @@ window.addEventListener("scroll", () => {
 
         const sectionTop = section.offsetTop - 120;
 
-        const sectionHeight = section.offsetHeight;
-
         if (pageYOffset >= sectionTop) {
 
             current = section.getAttribute("id");
@@ -244,41 +242,6 @@ window.addEventListener("scroll", startCounters);
 
 startCounters();
 
-
-/* =======================================================
-   ACTIVE NAVBAR LINK
-======================================================= */
-
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 120;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
 
 
 /* =======================================================
