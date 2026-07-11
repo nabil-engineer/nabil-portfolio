@@ -279,3 +279,36 @@ window.addEventListener("scroll", () => {
     });
 
 });
+
+
+/* =======================================================
+   PROJECT LIGHTBOX
+======================================================= */
+
+const projectImage = document.querySelector(".project-image");
+
+const lightbox = document.getElementById("lightbox");
+
+const closeLightbox = document.querySelector(".close-lightbox");
+
+projectImage.addEventListener("click", () => {
+
+    lightbox.classList.add("active");
+
+});
+
+closeLightbox.addEventListener("click", () => {
+
+    lightbox.classList.remove("active");
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+    if(e.target === lightbox){
+
+        lightbox.classList.remove("active");
+
+    }
+
+});

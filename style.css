@@ -939,7 +939,23 @@ p{
 
 .project-image img{
 
-    transition:.5s;
+    width:100%;
+
+    display:block;
+
+    transition:0.6s ease;
+
+}
+
+.project-image:hover img{
+
+    transform:scale(1.15);
+
+}
+
+.project-image:hover .project-overlay{
+
+    opacity:1;
 
 }
 
@@ -961,11 +977,11 @@ p{
 
     align-items:center;
 
-    background:rgba(15,23,42,.65);
+    background:rgba(0,0,0,.45);
 
     opacity:0;
 
-    transition:all .35s ease;
+    transition:all .4s ease;
 
 }
 
@@ -1447,7 +1463,89 @@ footer p{
 }
 
 
+/* =======================================================
+   PROJECT LIGHTBOX
+======================================================= */
 
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:5000;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox-image{
+
+    max-width:90vw;
+
+    max-height:90vh;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:16px;
+
+    transform:scale(.9);
+
+    transition:.35s ease;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+}
+
+.lightbox.active .lightbox-image{
+
+    transform:scale(1);
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:25px;
+
+    right:40px;
+
+    color:white;
+
+    font-size:48px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
 
 
 /* =======================================================
