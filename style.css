@@ -524,27 +524,6 @@ p{
 
 }
 
-#typing-text{
-
-    border-right:3px solid #60a5fa;
-
-    padding-right:6px;
-
-    white-space:nowrap;
-
-    animation:cursorBlink .8s infinite;
-
-}
-
-@keyframes cursorBlink{
-
-    50%{
-
-        border-color:transparent;
-
-    }
-
-}
 
 .hero-content p{
 
