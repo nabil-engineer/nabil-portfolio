@@ -291,7 +291,15 @@ const lightbox = document.getElementById("lightbox");
 
 const closeLightbox = document.querySelector(".close-lightbox");
 
-projectImage.addEventListener("click", () => {
+projectImage.addEventListener("click", function () {
+
+    lightbox.classList.add("active");
+
+});
+
+const overlay = document.querySelector(".project-overlay");
+
+overlay.addEventListener("click", function () {
 
     lightbox.classList.add("active");
 
