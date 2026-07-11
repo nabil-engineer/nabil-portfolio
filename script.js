@@ -37,7 +37,9 @@ menuToggle.addEventListener("click", () => {
 
 });
 
+const sections = document.querySelectorAll("section");
 
+const navItems = document.querySelectorAll(".nav-links a");
 
 /* =======================================================
    CLOSE MOBILE MENU
@@ -78,9 +80,6 @@ window.addEventListener("scroll", () => {
    ACTIVE NAVIGATION
 ======================================================= */
 
-const sections = document.querySelectorAll("section");
-
-const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
@@ -89,8 +88,6 @@ window.addEventListener("scroll", () => {
     sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 120;
-
-        const sectionHeight = section.offsetHeight;
 
         if(window.scrollY >= sectionTop){
 
@@ -148,3 +145,175 @@ backToTop.addEventListener("click", () => {
     });
 
 });
+
+
+/* =======================================================
+   HIDE NAVBAR ON SCROLL
+======================================================= */
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    if(currentScroll > lastScroll && currentScroll > 120){
+
+        navbar.classList.add("hide");
+
+    }else{
+
+        navbar.classList.remove("hide");
+
+    }
+
+    lastScroll = currentScroll;
+
+});
+
+
+/* =======================================================
+   ANIMATED COUNTERS
+======================================================= */
+
+const counters = document.querySelectorAll(".counter");
+
+let counterStarted = false;
+
+function startCounters(){
+
+    if(counterStarted) return;
+
+    const about = document.querySelector("#about");
+
+    const top = about.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 150){
+
+        counterStarted = true;
+
+        counters.forEach(counter => {
+
+            const target = Number(counter.dataset.target);
+
+            let count = 0;
+
+            const increment = Math.max(1, Math.ceil(target / 60));
+
+            const update = () => {
+
+                count += increment;
+
+                if(count >= target){
+
+                    if(target === 100){
+
+                     counter.textContent = target + "%";
+
+                    }else if(target !== 2){
+
+                     counter.textContent = target + "+";
+
+                    }else{
+
+                     counter.textContent = target;
+
+                    }
+
+                }else{
+
+                    counter.textContent = count;
+
+                    requestAnimationFrame(update);
+
+                }
+
+            };
+
+            update();
+
+        });
+
+    }
+
+}
+
+window.addEventListener("scroll", startCounters);
+
+startCounters();
+
+
+
+/* =======================================================
+   TYPEWRITER EFFECT
+======================================================= */
+
+const typingText = document.querySelector("#typing-text");
+
+const words = [
+
+    "Software Developer",
+
+    "AI Engineer",
+
+    "Python Developer",
+
+    "Aerospace Enthusiast",
+
+    "Machine Learning Enthusiast"
+
+];
+
+let wordIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord = words[wordIndex];
+
+    if(!deleting){
+
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect, 1800);
+
+            return;
+
+        }
+
+    }else{
+
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+
+                wordIndex = 0;
+
+            }
+
+        }
+
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 100);
+
+}
+
+typeEffect();
