@@ -14,6 +14,7 @@ html{
 
 body{
     overflow-x:hidden;
+    
 }
 
 /* =======================================================
@@ -52,6 +53,8 @@ body{
 
 body{
 
+    position:relative;
+
     font-family:'Poppins',sans-serif;
 
     background:var(--background);
@@ -73,6 +76,10 @@ body{
 section{
 
     padding:120px 8%;
+
+    position:relative;
+
+    z-index:1;
 
 }
 
@@ -273,6 +280,39 @@ p{
     background:var(--primary);
 
     color:white;
+
+}
+
+
+/* =======================================================
+   CURSOR GLOW
+======================================================= */
+
+#cursor-glow{
+
+    position:fixed;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(37,99,235,.18),
+        transparent 70%
+    );
+
+    z-index:0;
+
+    transition:
+        left .08s linear,
+        top .08s linear;
 
 }
 
@@ -493,6 +533,10 @@ p{
     color:white;
 
     padding:140px 0 80px;
+
+    position:relative;
+
+    z-index:1;
 
 }
 
@@ -1483,6 +1527,10 @@ footer{
 
     padding:35px 0;
 
+    position:relative;
+
+    z-index:1;
+
 }
 
 footer p{
@@ -1893,6 +1941,30 @@ body.dark .navbar{
     background:rgba(2,6,23,.9);
 
 }
+
+
+/* =======================================================
+   3D CARD EFFECT
+======================================================= */
+
+.skill-card,
+.project-card,
+.education-card,
+.cert-card,
+.stat-card{
+
+    transform-style:preserve-3d;
+
+    perspective:1000px;
+
+    transition:
+        transform .18s linear,
+        box-shadow .30s ease;
+
+    will-change:transform;
+
+}
+
 
 
 /* =======================================================

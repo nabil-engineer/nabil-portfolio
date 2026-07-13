@@ -399,7 +399,9 @@ function typeEffect(){
 
 }
 
-typeEffect();
+if (typing) {
+    typeEffect();
+}
 
 
 /* =======================================================
@@ -418,24 +420,90 @@ if(savedTheme==="dark"){
 
 }
 
-themeToggle.addEventListener("click",()=>{
+if(themeToggle){
 
-    document.body.classList.toggle("dark");
+    themeToggle.addEventListener("click",()=>{
 
-    if(document.body.classList.contains("dark")){
+        document.body.classList.toggle("dark");
 
-        localStorage.setItem("theme","dark");
+        if(document.body.classList.contains("dark")){
 
-        themeToggle.textContent="☀️";
+            localStorage.setItem("theme","dark");
+            themeToggle.textContent="☀️";
 
-    }
+        }else{
 
-    else{
+            localStorage.setItem("theme","light");
+            themeToggle.textContent="🌙";
 
-        localStorage.setItem("theme","light");
+        }
 
-        themeToggle.textContent="🌙";
+    });
 
-    }
+}
+
+
+
+/* =======================================================
+   CURSOR GLOW
+======================================================= */
+
+const glow = document.getElementById("cursor-glow");
+
+if(glow){
+
+    document.addEventListener("mousemove",(e)=>{
+
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+
+    });
+
+}
+
+
+/* =======================================================
+   3D HOVER CARDS
+======================================================= */
+
+const cards = document.querySelectorAll(
+
+".skill-card,.project-card,.education-card,.cert-card,.stat-card"
+
+);
+
+cards.forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rotateY = (x / rect.width - 0.5) * 12;
+
+        const rotateX = (0.5 - y / rect.height) * 12;
+
+        card.style.transform =
+
+        `perspective(1000px)
+
+        rotateX(${rotateX}deg)
+
+        rotateY(${rotateY}deg)
+
+        translateY(-10px)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform =
+
+        "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+
+    });
 
 });
