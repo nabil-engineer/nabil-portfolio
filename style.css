@@ -24,6 +24,7 @@ body {
 :root {
 
     --primary: #2563eb;
+
     --primary-hover: #1d4ed8;
 
     --dark: #0f172a;
@@ -39,6 +40,10 @@ body {
     --border: #e2e8f0;
 
     --radius: 18px;
+
+    --radius-sm: 10px;
+
+    --radius-lg: 24px;
 
     --shadow:
         0 10px 35px rgba(0, 0, 0, .08);
@@ -93,27 +98,22 @@ section {
 
 
 img {
-
     display: block;
-
     max-width: 100%;
-
+    height: auto;
 }
 
 a {
-
     text-decoration: none;
-
+    color: inherit;
     transition: var(--transition);
-
 }
 
 button {
-
+    font: inherit;
     border: none;
-
+    background: none;
     cursor: pointer;
-
 }
 
 h1 {
@@ -819,7 +819,7 @@ p {
 
     background: white;
 
-    border-radius: 18px;
+    border-radius: var(--radius);
 
     padding: 30px;
 
@@ -884,19 +884,9 @@ p {
 
     overflow: hidden;
 
-    background: white;
-
-    border: 1px solid rgba(226, 232, 240, .8);
-
-    border-radius: 18px;
-
     padding: 40px;
 
     text-align: center;
-
-    box-shadow: var(--shadow);
-
-    transition: all .35s ease;
 
 }
 
@@ -1193,7 +1183,7 @@ body.dark .tech-item span {
 
     overflow: hidden;
 
-    border-radius: 18px;
+    border-radius: var(--radius);
 
     cursor: pointer;
 
@@ -1393,7 +1383,7 @@ body.dark .tech-item span {
 
     border: 1px solid rgba(226, 232, 240, .8);
 
-    border-radius: 18px;
+    border-radius: var(--radius);
 
     padding: 40px;
 
@@ -1463,7 +1453,7 @@ body.dark .tech-item span {
 
     border: 1px solid rgba(226, 232, 240, .8);
 
-    border-radius: 18px;
+    border-radius: var(--radius);
 
     padding: 35px;
 
@@ -1643,6 +1633,8 @@ body.dark .tech-item span {
 
     object-fit: contain;
 
+    flex-shrink: 0;
+
 }
 
 /* ==========================================
@@ -1695,7 +1687,7 @@ body.dark .tech-item span {
 
     background: #ffffff;
 
-    border-radius: 18px;
+    border-radius: var(--radius);
 
     padding: 25px;
 
