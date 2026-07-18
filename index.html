@@ -19,6 +19,16 @@
 
     <meta name="theme-color" content="#0f172a">
 
+    <meta name="application-name" content="Nabil Elouizi Portfolio">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="color-scheme" content="light dark">
+
     <meta property="og:title" content="Nabil Elouizi | Software Developer | AI Engineer | Aerospace Software">
 
     <meta property="og:description"
@@ -32,6 +42,26 @@
 
     <meta property="og:site_name" content="Nabil Elouizi Portfolio">
 
+    <link rel="canonical" href="https://nabil-engineer.github.io/nabil-portfolio/">
+
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Nabil Elouizi Portfolio">
+
+    <meta name="twitter:description" content="Software Developer | AI | Aerospace Software">
+
+    <meta name="twitter:image" content="https://nabil-engineer.github.io/nabil-portfolio/images/profile.webp">
+
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Nabil Elouizi | Software Developer | AI Engineer | Aerospace Software</title>
     <link rel="icon" type="image/png" href="images/profile.webp">
 
@@ -41,14 +71,32 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    </noscript>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="dns-prefetch" href="//github.com">
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
 </head>
 
 <body>
+
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <h2>Nabil Elouizi</h2>
+    </div>
 
     <div id="cursor-glow"></div>
 
@@ -97,7 +145,8 @@
 
             <div class="hero-image">
 
-                <img src="images/profile.webp" alt="Nabil Elouizi" loading="eager" decoding="async">
+                <img src="images/profile.webp" alt="Portrait of Nabil Elouizi" loading="eager" fetchpriority="high"
+                    decoding="async">
 
             </div>
 
@@ -197,7 +246,7 @@
 
                     <div class="stat-card">
 
-                        <h3 class="counter" data-target="5">0</h3>
+                        <h3 class="counter" data-target="1">0</h3>
 
                         <p>Projects</p>
 
@@ -245,6 +294,7 @@
 
             <div class="skills-container">
 
+                <!-- Programming -->
                 <div class="skill-card">
 
                     <div class="skill-header">
@@ -253,92 +303,102 @@
 
                         <h3>Programming</h3>
 
-                        <div class="tech-icons">
+                    </div>
 
-                            <div class="tech-item">
-                                <img src="icons/programming/python.svg" alt="Python" loading="lazy" decoding="async">
-                                <span>Python</span>
-                            </div>
+                    <p>
+                        Programming languages used to build desktop, web and AI applications.
+                    </p>
 
-                            <div class="tech-item">
-                                <img src="icons/programming/java.svg" alt="Java" loading="lazy" decoding="async">
-                                <span>Java</span>
-                            </div>
+                    <div class="tech-icons">
 
-                            <div class="tech-item">
-                                <img src="icons/programming/javascript.svg" alt="JavaScript" loading="lazy"
-                                    decoding="async">
-                                <span>JavaScript</span>
-                            </div>
+                        <div class="tech-item">
+                            <img src="icons/programming/python.svg" alt="Python" loading="lazy" decoding="async">
+                            <span>Python</span>
+                        </div>
 
-                            <div class="tech-item">
-                                <img src="icons/programming/html5.svg" alt="HTML5" loading="lazy" decoding="async">
-                                <span>HTML5</span>
-                            </div>
+                        <div class="tech-item">
+                            <img src="icons/programming/java.svg" alt="Java" loading="lazy" decoding="async">
+                            <span>Java</span>
+                        </div>
 
-                            <div class="tech-item">
-                                <img src="icons/programming/css3.svg" alt="CSS3" loading="lazy" decoding="async">
-                                <span>CSS3</span>
-                            </div>
+                        <div class="tech-item">
+                            <img src="icons/programming/javascript.svg" alt="JavaScript" loading="lazy"
+                                decoding="async">
+                            <span>JavaScript</span>
+                        </div>
 
+                        <div class="tech-item">
+                            <img src="icons/programming/html5.svg" alt="HTML5" loading="lazy" decoding="async">
+                            <span>HTML5</span>
+                        </div>
+
+                        <div class="tech-item">
+                            <img src="icons/programming/css3.svg" alt="CSS3" loading="lazy" decoding="async">
+                            <span>CSS3</span>
                         </div>
 
                     </div>
 
-                    <div class="skill-card">
+                </div>
 
-                        <div class="skill-header">
+                <!-- AI -->
+                <div class="skill-card">
 
-                            <img src="icons/ai.svg" alt="Artificial Intelligence" class="skill-icon">
+                    <div class="skill-header">
 
-                            <h3>AI & Data Science</h3>
+                        <img src="icons/ai.svg" alt="Artificial Intelligence" class="skill-icon">
 
-                        </div>
-
-                        <p>
-                            Machine Learning, Data Analysis,
-                            AI Applications and Python Libraries.
-                        </p>
+                        <h3>AI &amp; Data Science</h3>
 
                     </div>
 
-                    <div class="skill-card">
+                    <p>
+                        Machine Learning, Data Analysis, Artificial Intelligence applications,
+                        automation and modern Python libraries.
+                    </p>
 
-                        <div class="skill-header">
+                </div>
 
-                            <img src="icons/ai.svg" alt="Artificial Intelligence" class="skill-icon">
+                <!-- Aerospace -->
+                <div class="skill-card">
 
-                            <h3>Aerospace Software</h3>
+                    <div class="skill-header">
 
-                            <p>
-                                Flight Performance,
-                                Aviation Software,
-                                Aircraft Data Analysis.
-                            </p>
+                        <img src="icons/airplane.svg" alt="Artificial Intelligence" class="skill-icon">
 
-                        </div>
-
-                        <div class="skill-card">
-
-                            <div class="skill-header">
-
-                                <img src="icons/ai.svg" alt="Artificial Intelligence" class="skill-icon">
-
-                                <h3>Development Tools</h3>
-
-                                <p>
-                                    Git, GitHub,
-                                    Flask,
-                                    Tkinter,
-                                    VS Code,
-                                    Linux.
-                                </p>
-
-                            </div>
-
-                        </div>
+                        <h3>Aerospace Software</h3>
 
                     </div>
+
+                    <p>
+                        Flight Performance, Aviation Software,
+                        Aircraft Data Analysis and intelligent aviation applications.
+                    </p>
+
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-card">
+
+                    <div class="skill-header">
+
+                        <img src="icons/tools.svg" alt="Development Tools" class="skill-icon">
+
+                        <h3>Development Tools</h3>
+
+                    </div>
+
+                    <p>
+                        Git, GitHub, Flask,
+                        Tkinter, VS Code,
+                        Linux and software development tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -357,10 +417,10 @@
                 A selection of software projects demonstrating my technical skills.
             </p>
 
-            <div class="cert-stats">
+            <div class="project-stats">
 
                 <div class="stat-box">
-                    <h3>4+</h3>
+                    <h3>2+</h3>
                     <p>Professional Certifications</p>
                 </div>
 
@@ -431,13 +491,83 @@
                 <div class="project-links">
 
                     <a href="https://github.com/nabil-engineer/AeroFlightSuite" target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer" aria-label="View AeroFlight Suite source code on GitHub">
                         View Source Code
                     </a>
 
                 </div>
 
             </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     GITHUB PROFILE
+======================================================= -->
+
+    <section id="github" class="reveal">
+
+        <div class="container">
+
+            <h2>GitHub Profile</h2>
+
+            <p class="section-subtitle">
+                Live GitHub statistics and latest repositories.
+            </p>
+
+            <div class="github-profile">
+
+                <div class="github-avatar">
+                    <img id="github-avatar" src="" alt="GitHub Avatar">
+                </div>
+
+                <div class="github-info">
+
+                    <h3 id="github-name">Loading...</h3>
+
+                    <p id="github-bio"></p>
+
+                    <div class="github-stats">
+
+                        <div class="github-stat">
+                            <h4 id="repo-count">--</h4>
+                            <span>Repositories</span>
+                        </div>
+
+                        <div class="github-stat">
+                            <h4 id="followers-count">--</h4>
+                            <span>Followers</span>
+                        </div>
+
+                        <div class="github-stat">
+                            <h4 id="following-count">--</h4>
+                            <span>Following</span>
+                        </div>
+
+                        <div class="github-stat">
+                            <h4 id="github-location">--</h4>
+                            <span>Location</span>
+                        </div>
+
+                    </div>
+
+                    <a href="https://github.com/nabil-engineer" target="_blank" class="btn">
+                        Visit GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+            <h3 class="repo-title">
+                Latest Repositories
+            </h3>
+
+            <div id="repo-list" class="repo-grid"></div>
 
         </div>
 
@@ -452,39 +582,122 @@
 
         <div class="container">
 
-            <h2>Education</h2>
+            <h2>Education & Learning Journey</h2>
 
             <p class="section-subtitle">
-                My academic journey in software development and fundamental physics.
+                My academic background and continuous professional development.
             </p>
 
-            <div class="education-card">
+            <div class="timeline">
 
-                <h3>Specialized Technician in Software Development</h3>
+                <!-- Specialized Technician -->
+                <div class="timeline-item">
 
-                <p>
-                    École Centrale Privée d'Informatique et de Gestion
-                </p>
+                    <div class="timeline-dot"></div>
 
-            </div>
+                    <div class="timeline-content">
 
-            <div class="education-card">
+                        <span class="timeline-date">
+                            2023
+                        </span>
 
-                <h3>Bachelor's Degree in Fundamental Physics (In Progress)</h3>
+                        <h3>Specialized Technician in Software Development</h3>
 
-                <p>
-                    Ibn Tofail University – Faculty of Sciences
-                </p>
+                        <h4>École Centrale Privée d'Informatique et de Gestion</h4>
 
-            </div>
+                        <p>
+                            Completed a specialized diploma focused on software
+                            development, algorithms, databases, networking,
+                            object-oriented programming and desktop applications.
+                        </p>
 
-            <div class="education-card">
+                    </div>
 
-                <h3>DEUG in Fundamental Physics</h3>
+                </div>
 
-                <p>
-                    Ibn Tofail University – Faculty of Sciences
-                </p>
+                <!-- DEUG -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            2026
+                        </span>
+
+                        <h3>DEUG in Fundamental Physics</h3>
+
+                        <h4>Ibn Tofail University</h4>
+
+                        <p>
+
+                            Successfully completed the DEUG program in Fundamental
+                            Physics, covering mathematics, mechanics,
+                            electromagnetism and scientific computing.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Bachelor -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            Present
+                        </span>
+
+                        <h3>Bachelor's Degree in Fundamental Physics</h3>
+
+                        <h4>Ibn Tofail University</h4>
+
+                        <p>
+
+                            Currently pursuing a Bachelor's degree while expanding
+                            my expertise in Artificial Intelligence,
+                            Software Engineering and Aerospace technologies.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Certifications -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            2026
+                        </span>
+
+                        <h3>Professional Certifications</h3>
+
+                        <h4>Cisco Networking Academy & Anthropic</h4>
+
+                        <p>
+
+                            Earned industry-recognized certifications in Python,
+                            Artificial Intelligence and AI-assisted software
+                            development.
+
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -559,7 +772,7 @@
                     </div>
 
                     <a href="https://www.credly.com/badges/d64d3071-d894-4c9d-a787-fc0b4f29ec06/linked_in_profile"
-                        target="_blank" class="btn">
+                        target="_blank" rel="noopener noreferrer" class="btn">
                         Verify Credential
                     </a>
 
@@ -593,7 +806,8 @@
 
                     <div class="credential-badge">
 
-                        <img src="badges/python-essentials-2.png" alt="Python Essentials 2 Badge">
+                        <img src="badges/python-essentials-2.png" alt="Python Essentials 2 Badge" loading="lazy"
+                            decoding="async">
 
                     </div>
 
@@ -613,11 +827,158 @@
                     </div>
 
                     <a href="https://www.credly.com/badges/c4bf9317-d177-434d-aa63-841567413799/linked_in_profile"
-                        target="_blank" class="btn">
+                        target="_blank" rel="noopener noreferrer" class="btn">
                         Verify Credential
                     </a>
 
                 </div>
+
+                <!-- ==========================================
+                   Claude Code in Action
+            ========================================== -->
+
+                <div class="cert-card">
+
+                    <div class="cert-header">
+
+                        <img src="badges/anthropic.svg" alt="Anthropic Logo" class="company-logo">
+
+                        <div class="cert-company">
+
+                            <h5>Anthropic</h5>
+
+                            <span>Verified Certificate of Completion</span>
+
+                        </div>
+
+                    </div>
+
+                    <h3>Claude Code in Action</h3>
+
+                    <p class="cert-date">
+                        Issued: 2026
+                    </p>
+
+                    <div class="credential-badge">
+
+                        <img src="badges/claude-code-in-action.jpg" alt="Claude Code in Action Certificate"
+                            loading="lazy" decoding="async">
+
+                    </div>
+
+                    <p>
+                        Successfully completed the <strong>Claude Code in Action</strong>
+                        course by Anthropic, learning how to build software faster using
+                        Claude Code, AI-assisted development, prompt engineering,
+                        debugging, code generation and modern developer workflows.
+                    </p>
+
+                    <div class="cert-skills">
+
+                        <span>Claude Code</span>
+                        <span>Prompt Engineering</span>
+                        <span>AI Development</span>
+                        <span>Debugging</span>
+                        <span>Software Engineering</span>
+
+                    </div>
+
+                    <a href="https://verify.skilljar.com/c/za33fdyfadww" target="_blank" rel="noopener noreferrer"
+                        class="btn">
+                        View Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     CONTACT
+======================================================= -->
+
+    <section id="contact" class="reveal">
+
+        <div class="container">
+
+            <h2>Let's Work Together</h2>
+
+            <p class="section-subtitle">
+                I'm currently looking for internships, alternance opportunities and exciting software engineering
+                projects.
+            </p>
+
+            <div class="contact-grid">
+
+                <!-- Email -->
+                <a href="mailto:nabilelouizi123@gmail.com" class="contact-card">
+
+                    <div class="contact-icon">
+                        <img src="icons/email.svg" alt="Email">
+                    </div>
+
+                    <div class="contact-content">
+
+                        <h3>Email</h3>
+
+                        <p>nabilelouizi123@gmail.com</p>
+
+                        <span>Send me an email</span>
+
+                    </div>
+
+                </a>
+
+                <!-- GitHub -->
+
+                <a href="https://github.com/nabil-engineer" target="_blank" rel="noopener noreferrer"
+                    class="contact-card">
+
+                    <div class="contact-icon">
+
+                        💻
+
+                    </div>
+
+                    <div class="contact-content">
+
+                        <h3>GitHub</h3>
+
+                        <p>@nabil-engineer</p>
+
+                        <span>View my repositories</span>
+
+                    </div>
+
+                </a>
+
+                <!-- LinkedIn -->
+
+                <a href="https://www.linkedin.com/in/nabil-elouizi-026953420/" target="_blank" rel="noopener noreferrer"
+                    class="contact-card">
+
+                    <div class="contact-icon">
+
+                        💼
+
+                    </div>
+
+                    <div class="contact-content">
+
+                        <h3>LinkedIn</h3>
+
+                        <p>Professional Profile</p>
+
+                        <span>Let's connect</span>
+
+                    </div>
+
+                </a>
 
             </div>
 
@@ -668,7 +1029,7 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
 

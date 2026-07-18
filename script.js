@@ -4,7 +4,7 @@ window.addEventListener("scroll", revealSections);
 
 revealSections();
 
-function revealSections(){
+function revealSections() {
 
     const trigger = window.innerHeight * 0.85;
 
@@ -12,7 +12,7 @@ function revealSections(){
 
         const top = section.getBoundingClientRect().top;
 
-        if(top < trigger){
+        if (top < trigger) {
 
             section.classList.add("active");
 
@@ -33,9 +33,9 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 
-if(menuToggle){
+if (menuToggle) {
 
-    menuToggle.addEventListener("click",()=>{
+    menuToggle.addEventListener("click", () => {
 
         navLinks.classList.toggle("active");
 
@@ -70,11 +70,11 @@ const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 50){
+    if (window.scrollY > 50) {
 
         navbar.classList.add("scrolled");
 
-    }else{
+    } else {
 
         navbar.classList.remove("scrolled");
 
@@ -126,13 +126,13 @@ const backToTop = document.querySelector("#backToTop");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 400){
+    if (window.scrollY > 400) {
 
         backToTop.classList.add("show");
 
     }
 
-    else{
+    else {
 
         backToTop.classList.remove("show");
 
@@ -144,9 +144,9 @@ backToTop.addEventListener("click", () => {
 
     window.scrollTo({
 
-        top:0,
+        top: 0,
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
@@ -163,11 +163,11 @@ window.addEventListener("scroll", () => {
 
     const currentScroll = window.pageYOffset;
 
-    if(currentScroll > lastScroll && currentScroll > 120){
+    if (currentScroll > lastScroll && currentScroll > 120) {
 
         navbar.classList.add("hide");
 
-    }else{
+    } else {
 
         navbar.classList.remove("hide");
 
@@ -186,15 +186,15 @@ const counters = document.querySelectorAll(".counter");
 
 let counterStarted = false;
 
-function startCounters(){
+function startCounters() {
 
-    if(counterStarted) return;
+    if (counterStarted) return;
 
     const about = document.querySelector("#about");
 
     const top = about.getBoundingClientRect().top;
 
-    if(top < window.innerHeight - 150){
+    if (top < window.innerHeight - 150) {
 
         counterStarted = true;
 
@@ -210,23 +210,23 @@ function startCounters(){
 
                 count += increment;
 
-                if(count >= target){
+                if (count >= target) {
 
-                    if(target === 100){
+                    if (target === 100) {
 
-                     counter.textContent = target + "%";
+                        counter.textContent = target + "%";
 
-                    }else if(target !== 2){
+                    } else if (target !== 2) {
 
-                     counter.textContent = target + "+";
+                        counter.textContent = target + "+";
 
-                    }else{
+                    } else {
 
-                     counter.textContent = target;
+                        counter.textContent = target;
 
                     }
 
-                }else{
+                } else {
 
                     counter.textContent = count;
 
@@ -260,9 +260,9 @@ const lightbox = document.getElementById("lightbox");
 
 const closeLightbox = document.querySelector(".close-lightbox");
 
-if(projectImage){
+if (projectImage) {
 
-    projectImage.addEventListener("click", function(){
+    projectImage.addEventListener("click", function () {
 
         lightbox.classList.add("active");
 
@@ -272,9 +272,9 @@ if(projectImage){
 
 const overlay = document.querySelector(".project-overlay");
 
-if(overlay){
+if (overlay) {
 
-    overlay.addEventListener("click", function(){
+    overlay.addEventListener("click", function () {
 
         lightbox.classList.add("active");
 
@@ -282,9 +282,9 @@ if(overlay){
 
 }
 
-if(closeLightbox){
+if (closeLightbox) {
 
-    closeLightbox.addEventListener("click",()=>{
+    closeLightbox.addEventListener("click", () => {
 
         lightbox.classList.remove("active");
 
@@ -292,11 +292,11 @@ if(closeLightbox){
 
 }
 
-if(lightbox){
+if (lightbox) {
 
-    lightbox.addEventListener("click",(e)=>{
+    lightbox.addEventListener("click", (e) => {
 
-        if(e.target===lightbox){
+        if (e.target === lightbox) {
 
             lightbox.classList.remove("active");
 
@@ -313,7 +313,7 @@ if(lightbox){
 
 const progressBar = document.getElementById("progress-bar");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
     const scroll =
         document.documentElement.scrollTop;
@@ -353,20 +353,20 @@ let charIndex = 0;
 
 let deleting = false;
 
-function typeEffect(){
+function typeEffect() {
 
     const current = words[wordIndex];
 
-    if(!deleting){
+    if (!deleting) {
 
         typing.textContent =
-        current.substring(0,charIndex++);
+            current.substring(0, charIndex++);
 
-        if(charIndex > current.length){
+        if (charIndex > current.length) {
 
             deleting = true;
 
-            setTimeout(typeEffect,1500);
+            setTimeout(typeEffect, 1500);
 
             return;
 
@@ -374,20 +374,20 @@ function typeEffect(){
 
     }
 
-    else{
+    else {
 
         typing.textContent =
-        current.substring(0,--charIndex);
+            current.substring(0, --charIndex);
 
-        if(charIndex===0){
+        if (charIndex === 0) {
 
-            deleting=false;
+            deleting = false;
 
             wordIndex++;
 
-            if(wordIndex===words.length){
+            if (wordIndex === words.length) {
 
-                wordIndex=0;
+                wordIndex = 0;
 
             }
 
@@ -395,7 +395,7 @@ function typeEffect(){
 
     }
 
-    setTimeout(typeEffect,deleting?40:90);
+    setTimeout(typeEffect, deleting ? 40 : 90);
 
 }
 
@@ -412,29 +412,29 @@ const themeToggle = document.getElementById("theme-toggle");
 
 const savedTheme = localStorage.getItem("theme");
 
-if(savedTheme==="dark"){
+if (savedTheme === "dark") {
 
     document.body.classList.add("dark");
 
-    themeToggle.textContent="☀️";
+    themeToggle.textContent = "☀️";
 
 }
 
-if(themeToggle){
+if (themeToggle) {
 
-    themeToggle.addEventListener("click",()=>{
+    themeToggle.addEventListener("click", () => {
 
         document.body.classList.toggle("dark");
 
-        if(document.body.classList.contains("dark")){
+        if (document.body.classList.contains("dark")) {
 
-            localStorage.setItem("theme","dark");
-            themeToggle.textContent="☀️";
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "☀️";
 
-        }else{
+        } else {
 
-            localStorage.setItem("theme","light");
-            themeToggle.textContent="🌙";
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "🌙";
 
         }
 
@@ -450,9 +450,9 @@ if(themeToggle){
 
 const glow = document.getElementById("cursor-glow");
 
-if(glow){
+if (glow) {
 
-    document.addEventListener("mousemove",(e)=>{
+    document.addEventListener("mousemove", (e) => {
 
         glow.style.left = e.clientX + "px";
         glow.style.top = e.clientY + "px";
@@ -468,13 +468,13 @@ if(glow){
 
 const cards = document.querySelectorAll(
 
-".skill-card,.project-card,.education-card,.cert-card,.stat-card"
+    ".skill-card,.project-card,.education-card,.cert-card,.stat-card"
 
 );
 
-cards.forEach(card=>{
+cards.forEach(card => {
 
-    card.addEventListener("mousemove",(e)=>{
+    card.addEventListener("mousemove", (e) => {
 
         const rect = card.getBoundingClientRect();
 
@@ -488,7 +488,7 @@ cards.forEach(card=>{
 
         card.style.transform =
 
-        `perspective(1000px)
+            `perspective(1000px)
 
         rotateX(${rotateX}deg)
 
@@ -498,12 +498,88 @@ cards.forEach(card=>{
 
     });
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
         card.style.transform =
 
-        "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+            "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
 
     });
+
+});
+
+
+
+/* ==========================================
+      GITHUB PROFILE
+========================================== */
+
+const username = "nabil-engineer";
+
+fetch(`https://api.github.com/users/${username}`)
+
+    .then(r => r.json())
+
+    .then(user => {
+
+        document.getElementById("github-avatar").src = user.avatar_url;
+
+        document.getElementById("github-name").textContent = user.name;
+
+        document.getElementById("github-bio").textContent = user.bio;
+
+        document.getElementById("repo-count").textContent = user.public_repos;
+
+        document.getElementById("followers-count").textContent = user.followers;
+
+        document.getElementById("following-count").textContent = user.following;
+
+        document.getElementById("github-location").textContent = user.location || "Morocco";
+
+    });
+
+fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`)
+
+    .then(r => r.json())
+
+    .then(repos => {
+
+        const list = document.getElementById("repo-list");
+
+        repos.forEach(repo => {
+
+            list.innerHTML += `
+
+<div class="repo-card">
+
+<h4>${repo.name}</h4>
+
+<p>${repo.description || "No description available."}</p>
+
+<a href="${repo.html_url}" target="_blank">
+
+View Repository
+
+</a>
+
+</div>
+
+`;
+
+        });
+
+    });
+
+
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hidden");
+
+    }, 600);
 
 });
